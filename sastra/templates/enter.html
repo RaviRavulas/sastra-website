@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NewUser</title>
+        <style>
+            body {
+                background-color: aliceblue;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 10%;
+                padding: 0;
+
+            }
+            .enterbox {
+                background-color: aqua;
+                width: 30%;
+                padding: 20px;
+                border-radius: 5px;
+
+            }
+
+            div h2{
+                text-align: center;
+                background-color: rgb(76, 191, 129);
+                margin-bottom: 20px;
+                margin-top: 20px;
+            }
+
+            input[type="submit"] {
+                width: 100%;
+                padding: 10px;
+                background-color: #518e51;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+                        
+            input[type="submit"]:hover {
+                background-color: #3e9d4c;
+            }
+
+            input[type="text"] {
+                width: 90%;
+                padding: 10px;
+                margin-bottom: 10px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="enterbox">
+            <h2>NewUser</h2>
+            <form method="POST">
+                {% csrf_token %}
+                <form>
+                    {% for field in form %}
+                      <p>
+                        <input type="text" name="{{ field.name }}" placeholder="{{ field.label }}">
+                      </p>
+                    {% endfor %}
+                  </form>
+                  
+                <input type="submit" value="Submit">
+            </form>
+
+        </div>
+
+    </body>
+</html>
+

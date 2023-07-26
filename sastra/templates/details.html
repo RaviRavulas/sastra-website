@@ -1,0 +1,74 @@
+<html>
+<style>
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #457bab;
+}
+
+thead th {
+  background-color: #1f2390;
+  font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #e2f4ff;
+}
+
+header {
+    background-color: aqua;
+    padding: 20px;
+}
+.tr {
+    background-color: #5f619c;
+}
+</style>
+<head>
+<title>DETAILS</title>
+
+</head>
+
+<body>
+    <header>
+        <h1 align="center">STUDENT DETAILS</h1>
+    </header>
+    <div class="table-container">
+
+        <table>
+
+            <tr class="tr">
+
+                <th>NAME</th>
+                <th>REGNO</th>
+                <th>CGPA</th>
+                <th>ATTENDANCE</th>
+            </tr>
+            {%for i in x%}
+            <tr>
+                <td>{{i.name}}</td>
+                <td>{{i.regno}}</td>
+                <td>{{i.cgpa}}</td>
+                <td>{{i.attendance}}</td>
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+</body>
+</html>
